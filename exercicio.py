@@ -13,14 +13,16 @@ numero_de_tentativas = 0
 i = 0
 flag = False
 condicao = True
+os.system('cls')
 print('Adivinhe as letras que formam a palavra secreta e ganhe o jogo.')
 print('')
 
 while condicao:
     if flag == True:
+        palavra_secreta = input('Qual será a palavra secreta? ')
+        os.system('cls')
         print('Adivinhe as letras que formam a palavra secreta e ganhe o jogo.')
         print('')
-        palavra_secreta = input('Qual será a palavra secreta? ')
     letra_digitada = input('Qual a letra correta? ')
     numero_de_tentativas += 1
     if len(letra_digitada) > 1:
@@ -48,6 +50,7 @@ while condicao:
         print('')
         flag = False
         if reiniciar == 's' or reiniciar == 'S':
+            os.system('cls')
             letras_acertadas = ''
             numero_de_tentativas = 0
             i = 0

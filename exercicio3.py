@@ -11,11 +11,11 @@ condicao = True
 lista = []
 while condicao:
     print("Selecione uma opção")
-    escolha = input('[i]nserir [a]pagar [l]istar: ')
+    escolha = input('[i]nserir [a]pagar [l]istar [s]air: ')
     if escolha =='i':
         os.system('cls')
         valor = input('Insira o nome do produto: ')
-        lista = lista.append(valor)
+        lista.append(valor) # O cabeçudo estava realizando uma atribuição além do método do objeto string.
     elif escolha =='a':
         os.system('cls')
         indiceEscolhido = input('Escolha um índice válido para apagar: ')
@@ -30,10 +30,16 @@ while condicao:
             print('Erro desconhecido')
     elif escolha =='l':
         os.system('cls')
+
         if len(lista) == 0:
             print('Não há nada para listar!')
-        else:
-            for i, valor in enumerate(lista):
-                print(i, valor)
+
+        for i, valor in enumerate(lista):
+            print(i, valor)
+    elif escolha == 's':
+        os.system('cls')
+        print('Saindo...')
+        condicao = False
     else:
-        print('Por favor, escolha i, a ou l.')
+        print('Por favor, escolha i, a, l ou s para sair.')
+    

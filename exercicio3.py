@@ -8,12 +8,32 @@ erros de índices inexistentes na lista.
 
 import os
 condicao = True
-contador = 0
+lista = []
 while condicao:
     print("Selecione uma opção")
     escolha = input('[i]nserir [a]pagar [l]istar: ')
-    if escolha =='l' and contador == 0:
-        print('Não há dados para listar.')
-        break
-    elif escolha =='a' and contador == 0:
-        print('Não há dados para apagar.')
+    if escolha =='i':
+        os.system('cls')
+        valor = input('Insira o nome do produto: ')
+        lista = lista.append(valor)
+    elif escolha =='a':
+        os.system('cls')
+        indiceEscolhido = input('Escolha um índice válido para apagar: ')
+        try:
+            indice = int(indiceEscolhido)
+            del lista[indice]
+        except ValueError:
+            print('Por favor digite um número inteiro.')
+        except IndexError:
+            print('Índice não existente na lista.')
+        except Exception:
+            print('Erro desconhecido')
+    elif escolha =='l':
+        os.system('cls')
+        if len(lista) == 0:
+            print('Não há nada para listar!')
+        else:
+            for i, valor in enumerate(lista):
+                print(i, valor)
+    else:
+        print('Por favor, escolha i, a ou l.')

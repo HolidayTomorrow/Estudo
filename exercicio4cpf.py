@@ -25,15 +25,16 @@ condicao = True
 while condicao:
     multiplicadores_primeiro_digito = 10
     multiplicadores_segundo_digito = 11
-    # cpf_digitado = '74682489070' 
+    # cpf_digitado = '74682489070' # Dados de entrada como teste para o exercício.
     cpf_digitado = input('CPF: ')
-    cpf_digitado = re.sub(r'[^0-9]', '', cpf_digitado)
+    cpf_digitado = re.sub(r'[^0-9]', '', cpf_digitado) # Operação nova até agora. Envolve a biblioteca "re" e opera dentro de uma string com números.
+    # O método re.sub "re.sub(r'[^0-9]', '', cpf_digitado)" faz a string ('cpf_digitado') eliminar dados diferentes de números entre 0 e 9, colocando nada ('') em seu lugar.
     cpf_coletado = cpf_digitado[:9]
     resultado = 0
     for digito_cpf in cpf_coletado:
         resultado += int(digito_cpf)*multiplicadores_primeiro_digito
         multiplicadores_primeiro_digito -= 1
-    resultado = ((resultado*10) % 11) if ((resultado*10) % 11) <= 9 else 0
+    resultado = ((resultado*10) % 11) if ((resultado*10) % 11) <= 9 else 0 # Operação ternária em Python. Melhor coisa que aprendi até aqui!
     cpf_coletado += str(resultado)
     resultado = 0
     for digito_cpf in cpf_coletado:

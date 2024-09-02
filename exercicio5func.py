@@ -16,11 +16,10 @@ valores = []
 contador = 0
 flag = True
 while flag:
-    entrada = input('Insira ')
-    for valor in entrada:
-        if valor != '0':
-            valores += valor
-        elif valor == None or valor == '' or valor == '0' or valor == '\n':
-            flag = False
-resultado = mult(valores)
+    entrada = int(input('Insira '))
+    if entrada != 0:
+        valores.append(entrada)
+    elif entrada == None or entrada == '' or entrada == 0 or entrada == '\n':
+        flag = False
+resultado = mult(*valores)
 print(resultado)

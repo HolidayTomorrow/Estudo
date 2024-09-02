@@ -6,20 +6,21 @@
 # da variável.
 
 def mult(*args):
-    if args == tuple:
         args = list(args)
         multiplica = 1
         for arg in args:
             multiplica *= arg
         return multiplica
+entrada = []
 valores = []
 contador = 0
 flag = True
 while flag:
-    valores = input('Insira ')
-    contador += 1
-    for valor in valores:
-        if valor == None or valor == '0' or valor == '' or valor == '\n':
+    entrada = input('Insira ')
+    for valor in entrada:
+        if valor != '0':
+            valores += valor
+        elif valor == None or valor == '' or valor == '0' or valor == '\n':
             flag = False
-resultado = mult(*valores)
+resultado = mult(valores)
 print(resultado)

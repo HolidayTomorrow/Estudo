@@ -67,5 +67,6 @@
         "gleam": "gleam run -m $fileNameWithoutExt"
     },
     "workbench.colorTheme": "Visual Studio 2019 Dark",
-    "workbench.preferredDarkColorTheme": "Visual Studio 2019 Dark"
+    "workbench.preferredDarkColorTheme": "Visual Studio 2019 Dark",
+    "docwriter.style": "XML"
 }

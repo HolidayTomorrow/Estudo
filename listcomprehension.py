@@ -5,7 +5,7 @@ produtos = [
     ]
 novos_produtos = [
     {**produto, 'preco': produto['preco'] * 1.05}
-    # if produto['preco'] > 5 else {**produto}
+    if produto['preco'] > 5 else {**produto}
     for produto in produtos
     ]
 print (*novos_produtos, sep = '\n')

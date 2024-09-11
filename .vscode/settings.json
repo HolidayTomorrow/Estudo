@@ -66,7 +66,7 @@
         "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
         "gleam": "gleam run -m $fileNameWithoutExt"
     },
-    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.preferredDarkColorTheme": "Visual Studio 2019 Dark",
     "docwriter.style": "XML"
 }

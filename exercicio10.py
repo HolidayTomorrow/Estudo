@@ -17,7 +17,7 @@ CAMINHO_ARQUIVO_REPROVADOS = 'lista_de_alunos_reprovados.json'
 class Avaliacao():
     def __init__(self, args):
         self.alunos = list(args)
-
+        
 alunos = [
     {'nome': 'Luiz', 'nota': 'A'},
     {'nome': 'Letícia', 'nota': 'B'},

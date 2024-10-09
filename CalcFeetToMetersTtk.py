@@ -1,13 +1,12 @@
+import contextlib
 from tkinter import *
 from tkinter import ttk
 
 
 def calculate(*args):
-    try:
+    with contextlib.suppress(ValueError):
         value = float(feet.get())
         meters.set(int(0.3048 * value * 10000.0 + 0.5) / 10000.0)
-    except ValueError:
-        pass
 
 
 root = Tk()

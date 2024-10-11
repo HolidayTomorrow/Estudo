@@ -2,14 +2,13 @@ import sys
 from settings import setupTheme
 from info import Info
 from settings import WINDOW_ICON_PATH
-from display import Display, Button
+from display import Display, ButtonsGrid
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
     QApplication,
     QMainWindow,
     QWidget,
-    QVBoxLayout,
-    QGridLayout
+    QVBoxLayout
 )
 
 
@@ -21,9 +20,10 @@ class Calculator(QMainWindow):
         
         
         self.centralwidget_ = QWidget()
+        self.layout_ = QVBoxLayout()
+        self.centralwidget_.setLayout(self.layout_)
         self.setCentralWidget(self.centralwidget_)
         
-        self.layout_ = QGridLayout()
         
         self.statusBar_ = self.statusBar()
         self.statusBar_.showMessage('Esta é uma aplicação em nível de desenvolvimento.')
@@ -50,20 +50,17 @@ if __name__=='__main__':
     app.setWindowIcon(icon)
     
     
-    info = Info('2.0 ^ 10.0 = 1024')
+    info = Info('Resultado')
     window.addWidgetToVLayout(info)
     
     
     display = Display()
     window.addWidgetToVLayout(display)
     
-    button = Button('Botão')
-    window.centralwidget_.setLayout(window.layout_)
-    window.addWidgetToVLayout(button)
-
+    buttonsGrid = ButtonsGrid(display, info)
+    window.layout_.addLayout(buttonsGrid)
+    buttonsGrid._makeGrid()
     
-    # button = Button("Tecla")
-    # window.addWidgetToVLayout(button)
     
     window.adjustFixedSize()
     

@@ -1,0 +1,13 @@
+{% extends 'global/base.html' %}
+
+{% if title_body %}
+    {% block title_body %} {{h1}} {% endblock title_body %}
+{% endif %}
+    
+{% block blog_content %}
+    
+    {% for post in posts %}
+        {% include 'global/partials/postblock.html' %}
+    {% endfor %}
+        
+{% endblock blog_content %}

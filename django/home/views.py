@@ -1,8 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 def home(request):
-    print('Home')
-    return HttpResponse('Home')
-
-# Create your views here.
+    print('home')
+    
+    context= {
+        'title' : 'Página inicial - ',
+        'h1' : 'Página inicial'
+    }
+    
+    return render(
+        request,
+        'index.html',
+        context,
+    )
